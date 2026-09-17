@@ -40,7 +40,7 @@ def decode_secret_message(secret_message):
     fourth_word = secret_message[3][12:6:-1]
     fifth_word = secret_message[4][20:15:-1]
 
-    return f"{first_word} {second_word} {third_word} {fourth_word} {fifth_word}"
+    return f'{first_word} {second_word} {third_word} {fourth_word} {fifth_word}'
 
 def run():
     decoded_message = decode_secret_message(secret_message)
