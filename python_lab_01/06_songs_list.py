@@ -20,7 +20,12 @@ violator_songs_list = [
 # Обратите внимание, что суммирование чисел с плавающей точкой может давать погрешность,
 # округлите результат до 3 знаков после запятой
 # TODO здесь ваш код
-
+def total_time_list(songs_list, songs_to_sum):
+    total_time = 0
+    for song in songs_list:
+        if song[0] in songs_to_sum:
+            total_time += song[1]
+    return round(total_time, 3)
 
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
@@ -40,3 +45,22 @@ violator_songs_dict = {
 #   А другие три песни звучат ХХХ минут
 # Обратите внимание на округление
 # TODO здесь ваш код
+def total_time_dict(songs_dict, songs_to_sum):
+    total_time = 0
+    for song in songs_to_sum:
+        if song in songs_dict:
+            total_time += songs_dict[song]
+    return round(total_time, 3)
+
+
+def run():
+    songs_to_sum_list = ['Halo', 'Enjoy the Silence', 'Clean']
+    total_time_list_result = total_time_list(violator_songs_list, songs_to_sum_list)
+    print(f'Три песни звучат {total_time_list_result} минут')
+
+    songs_to_sum_dict = ['Sweetest Perfection', 'Policy of Truth', 'Blue Dress']
+    total_time_dict_result = total_time_dict(violator_songs_dict, songs_to_sum_dict)
+    print(f'А другие три песни звучат {total_time_dict_result} минут')
+
+if __name__ == '__main__':
+    run()

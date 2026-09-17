@@ -8,7 +8,17 @@
 # Порядок чисел нужно сохранить.
 
 # Пример для чисел "1 2 3" и "9"
-result = (1 + 2) * 3
-print(result)
+def formula_for_9():
+    return (1 + 2) * 3
 
 # TODO написать формулу для 1 2 3 4 5 и вывести значение на консоль
+def formula_for_25():
+    return 1 * (2 + 3) * 4 + 5
+
+def run():
+    print(formula_for_9())
+    print(formula_for_25())
+
+
+if __name__ == '__main__':
+    run()

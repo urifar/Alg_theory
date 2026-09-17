@@ -34,8 +34,28 @@ shops = {
 # }
 # Указать надо только по 2 магазина с минимальными ценами
 
-sweets = {
-    # TODO здесь ваш код
-}
 
-print(sweets)
+def build_sweets_dict(shops):
+    sweets = {
+
+    }
+    for shop, products in shops.items():
+        for product in products:
+            name = product['name']
+            price = product['price']
+            if name not in sweets:
+                sweets[name] = []
+            sweets[name].append({'shop': shop, 'price': price})
+
+    for name in sweets:
+        sweets[name] = sorted(sweets[name], key=lambda x: x['price'])[:2]
+    return sweets
+
+
+def run():
+    sweets = build_sweets_dict(shops)
+    print(sweets)
+
+
+if __name__ == '__main__':
+    run()

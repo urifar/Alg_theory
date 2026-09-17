@@ -16,3 +16,23 @@ my_favorite_movies = 'Терминатор, Пятый элемент, Ават�
 # как указано в задании!
 
 # TODO здесь ваш код
+def get_selected_movies(movies):
+    movies_dict = {
+        'first': movies[0:10],
+        'last': movies[-15:],
+        'second': movies[12:25],
+        'second_from_end': movies[-22:-17]
+    }
+    return movies_dict
+    
+    
+def run():
+    movies = get_selected_movies(my_favorite_movies)
+    print(movies['first'])
+    print(movies['last'])
+    print(movies['second'])
+    print(movies['second_from_end'])
+
+
+if __name__ == '__main__':
+    run()

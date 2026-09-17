@@ -10,7 +10,9 @@ radius = 42
 #       пи возьмите равным 3.1415926
 #       точность указывается в функции round()
 # TODO здесь ваш код
-
+def calc_circle_area(radius):
+    square_r = 3.1415926 * (radius ** 2)
+    return round(square_r, 4)
 
 # Далее, пусть есть координаты точки
 point_1 = (23, 34)
@@ -24,6 +26,9 @@ point_1 = (23, 34)
 #       квадратный корень - это возведение в степень 0.5
 #       операции сравнения дают булевы константы True и False
 # TODO здесь ваш код
+def is_inside_circle(point, radius):
+    distance = (point[0] ** 2 + point[1] ** 2) ** 0.5
+    return distance < radius
 
 
 # Аналогично для другой точки
@@ -31,9 +36,16 @@ point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
 # Или False, если точка лежит вовне круга.
 # TODO здесь ваш код
+def run():
+    print(calc_circle_area(radius))
+    print(is_inside_circle(point_1, radius))
+    print(is_inside_circle(point_2, radius))
 
 # Пример вывода на консоль:
 #
 # 77777.7777
 # False
 # False
+
+if __name__ == '__main__':
+    run()

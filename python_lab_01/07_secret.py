@@ -33,3 +33,18 @@ secret_message = [
 #   Если нужны вычисления и разные пробы - делайте это в консоли пайтона, тут нужен только результат
 
 # TODO вывести расшифрованное сообщение
+def decode_secret_message(secret_message):
+    first_word = secret_message[0][3]
+    second_word = secret_message[1][9:13]
+    third_word = secret_message[2][5:15:2]
+    fourth_word = secret_message[3][12:6:-1]
+    fifth_word = secret_message[4][20:15:-1]
+
+    return f"{first_word} {second_word} {third_word} {fourth_word} {fifth_word}"
+
+def run():
+    decoded_message = decode_secret_message(secret_message)
+    print(decoded_message)
+
+if __name__ == '__main__':
+    run()
